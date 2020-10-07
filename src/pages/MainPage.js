@@ -7,6 +7,8 @@ import RadioGroup from "@material-ui/core/RadioGroup";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import TextField from "@material-ui/core/TextField";
 import Checkbox from "@material-ui/core/Checkbox";
+import Button from '@material-ui/core/Button';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -154,7 +156,7 @@ export default function MainPage() {
             <TextField
               id="Expiry"
               label="Expiry Date"
-              style={{ width: "20rem" }}
+              style={{ width: "15rem" }}
             />
           </form>
         </div>
@@ -167,7 +169,7 @@ export default function MainPage() {
           {(() => {
             if (taskOption === "Choice Task") {
               return (
-                <div className={classes.taskSettingDetails}>
+                <>
                       
                           <h4>Select your Option/s</h4>
                   <FormControlLabel
@@ -182,7 +184,7 @@ export default function MainPage() {
                     control={<Checkbox name="option 3" />}
                     label="Option 3"
                   />
-                </div>
+                </>
               );
             } else if (taskOption === "Decision Making Task") {
               return (
@@ -213,7 +215,7 @@ export default function MainPage() {
               return (
                 <>
                   <h4>Please type your Answer</h4>
-                  <form className={classes.taskRequirementForm}>
+                  <form >
                     <TextField
                       id="Answer"
                       label="Type your Answer"
@@ -258,7 +260,11 @@ export default function MainPage() {
             />
           </form>
         </div>
+
       </div>
+          <Button variant="contained" color="primary" style = {{position: "relative", right: "5px"}}>
+              Save
+            </Button>
     </Container>
   );
 }
